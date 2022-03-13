@@ -147,7 +147,7 @@ Label.BorderSizePixel = 0
 Label.Position = UDim2.new(0, 0, 0, 0)
 Label.Size = UDim2.new(0, 250, 0, 25)
 Label.Font = Enum.Font.GothamBlack
-Label.Text = "Execute Bar"
+Label.Text = "Execute cmds here"
 Label.TextColor3 = Color3.fromRGB(255, 255, 255)
 Label.TextScaled = true
 Label.TextSize = 14.000
@@ -336,15 +336,15 @@ TransparencyBar.MouseButton1Click:Connect(function()
 	end
 end)
 
-local Versions = "5.0"
+local Versions = "1.0"
 local Cmd = {}
 
 Cmd[#Cmd + 1] = {Text = "versions "..Versions,Title = "Script versions"}
-Cmd[#Cmd + 1] = {Text = "script by LocalPlayer#7434",Title = "Script owner"}
+Cmd[#Cmd + 1] = {Text = "modified by rareusername101lol",Title = "Script owner"}
 Cmd[#Cmd + 1] =	{Text = "cmd / cmds",Title = "Show commands bar"}
 Cmd[#Cmd + 1] =	{Text = "rejoin / rj",Title = "Rejoin the game"}
 Cmd[#Cmd + 1] =	{Text = "leave / leaveserver / quit",Title = "Leave the server"}
-Cmd[#Cmd + 1] =	{Text = "admin / giveadmin [plr]",Title = "Give a commands to player"}
+Cmd[#Cmd + 1] =	{Text = "admin / giveadmin [plr]",Title = "Give cmds to player"}
 Cmd[#Cmd + 1] =	{Text = "unadmin / removeadmin [plr]",Title = "Remove a commands from player"}
 Cmd[#Cmd + 1] =	{Text = "kill [plr]",Title = "Kill the player"}
 Cmd[#Cmd + 1] =	{Text = "killall",Title = "Kill all players"}
@@ -354,12 +354,12 @@ Cmd[#Cmd + 1] =	{Text = "killcriminal / killscriminal",Title = "Kill all crimina
 Cmd[#Cmd + 1] =	{Text = "tase [plr]",Title = "Tase the player"}
 Cmd[#Cmd + 1] =	{Text = "loopkill / loopkills [plr]",Title = "Loop kills player"}
 Cmd[#Cmd + 1] =	{Text = "unloopkill / unloopkills [plr]",Title = "Unloop kills player"}
-Cmd[#Cmd + 1] =	{Text = "loopkillall / loopkillsall",Title = "Loop kills all players"}
+Cmd[#Cmd + 1] =	{Text = "loopkillall / loopkillsall",Title = "Loop kills all fucking players"}
 Cmd[#Cmd + 1] =	{Text = "loopkillguard / loopkillsguard",Title = "Loop kills all guards"}
 Cmd[#Cmd + 1] =	{Text = "loopkillinmate / loopkillinmates",Title = "Loop kills all inmates"}
 Cmd[#Cmd + 1] =	{Text = "loopkillcriminal / loopkillcriminals",Title = "Loop kills all criminals"}
 Cmd[#Cmd + 1] =	{Text = "unloopkillall / unloopkillsall",Title = "Unloop kills all players"}
-Cmd[#Cmd + 1] =	{Text = "unloopkillguard / unloopkillsguard",Title = "Unloop kills all guards"}
+Cmd[#Cmd + 1] =	{Text = "unloopkillguard / unloopkillsguard",Title = "Unloop kills all the guards"}
 Cmd[#Cmd + 1] =	{Text = "unloopkillinmate / unloopkillinmates",Title = "Unloop kills all inmates"}
 Cmd[#Cmd + 1] =	{Text = "unloopkillcriminal / unloopkillcriminals",Title = "Unloop kills all criminals"}
 Cmd[#Cmd + 1] =	{Text = "inmate / inmates / prisoner / prisoners",Title = "Become inmate team"}
@@ -1111,7 +1111,7 @@ local Walls = {
 }
 
 --[[if not Slient then
-	Chat("Admin Commands By LocalPlayer   #   7434")
+	Chat("Admin Commands By LocalPlayer   #   7434 modified by rareusername101lol")
 	Chat("Admin Commands Version "..Versions)
 	Chat("Current Prefix Is "..Prefix)
 	wait()
@@ -1242,7 +1242,7 @@ function PlayerChatted(Message)
 	end
 	if Command("autogun") or Command("autoguns") or Command("autoallguns") then
 		States.Auto_Guns = true
-		Notify("Turn auto guns on", Color3.fromRGB(0, 255, 0), "Success")
+		Notify("You will automatically get guns upon respawn", Color3.fromRGB(0, 255, 0), "Success")
 		if BuyGamepass then
 			workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["Remington 870"].ITEMPICKUP)
 			workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["M4A1"].ITEMPICKUP)
@@ -1455,7 +1455,7 @@ function PlayerChatted(Message)
 	end
 	if Command("chatnotify") then
 		States.ChatNotify = true
-		Notify("Turn chat notify on", Color3.fromRGB(0, 255, 0), "Success")
+		Notify("TuIned on ChatNotify", Color3.fromRGB(0, 255, 0), "Success")
 	end
 	if Command("nochatnotify") or Command("unchatnotify") then
 		States.ChatNotify = false
@@ -1613,7 +1613,7 @@ function PlayerChatted(Message)
 	end
 	if Command("loopkillguard") or Command("loopkillguards") or Command("loopkillsguard") or Command("loopkillsguards") or Command("loopkillcop") or Command("loopkillpolices") or Command("loopkillspolices") then
 		States.LoopKill_Guards = true
-		Notify("Looping kills all guards", Color3.fromRGB(0, 255, 0), "Success")
+		Notify("You fucking loopkilled them all", Color3.fromRGB(0, 255, 0), "Success")
 		while wait() do
 			if States.LoopKill_Guards then
 				for i,v in pairs(game.Teams.Guards:GetPlayers()) do
@@ -2033,11 +2033,11 @@ function PlayerChatted(Message)
 	end
 	if Command("killaura") then
 		States.Kill_Aura = true
-		Notify("Turn kill aura on", Color3.fromRGB(0, 255, 0), "Success")
+		Notify("Turned the kill aura on", Color3.fromRGB(0, 255, 0), "Success")
 	end
 	if Command("nokillaura") or Command("unkillaura") then
 		States.Kill_Aura = false
-		Notify("Turn kill aura off", Color3.fromRGB(0, 255, 0), "Success")
+		Notify("Turned the kill aura off", Color3.fromRGB(0, 255, 0), "Success")
 	end
 	if Command("auto") or Command("autore") or Command("autorefresh") then
 		States.Auto_Refresh = true
@@ -2345,6 +2345,8 @@ function PlayerChatted(Message)
 					"WOW",
 					"wow",
 					"\(￣︶￣*\))"
+					
+					
 				}
 
 				while true do
@@ -2530,7 +2532,7 @@ function PlayerChatted(Message)
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil and not Admin[Player.UserId] then
 			Admin[Player.UserId] = {Player = Player}
-			Chat("/w "..Player.Name.." You've got admin permissions! Type "..Prefix.."cmds or "..Prefix.."cmd to see all commands")
+			Chat("/w "..Player.Name.." You Have Been Ranked! Say "..Prefix.."cmds or "..Prefix.."cmd To View The Commands! Admin will be removed when I leave.")
 			Notify("Gave "..Player.Name.." admin commands", Color3.fromRGB(0, 255, 0), "Success")
 		else
 			Notify("No player found / already admin", Color3.fromRGB(255, 0, 0), "Error")
@@ -2540,7 +2542,7 @@ function PlayerChatted(Message)
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil and Admin[Player.UserId] then
 			Admin[Player.UserId] = nil
-			Chat("/w "..Player.Name.." You are bad you've been removed admin permissions")
+			Chat("/w "..Player.Name.." You Have Been Unranked! No Commands For You")
 			Notify("Removed admins from "..Player.Name, Color3.fromRGB(0, 255, 0), "Success")
 		else
 			Notify("No player found / already admin", Color3.fromRGB(255, 0, 0), "Error")
