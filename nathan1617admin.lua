@@ -43,7 +43,7 @@ CmdName.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 CmdName.BorderSizePixel = 0
 CmdName.Size = UDim2.new(0, 350, 0, 25)
 CmdName.Font = Enum.Font.GothamBlack
-CmdName.Text = "Commands"
+CmdName.Text = "OP as fuck commands"
 CmdName.TextColor3 = Color3.fromRGB(255, 255, 255)
 CmdName.TextScaled = true
 CmdName.TextSize = 14.000
@@ -58,7 +58,7 @@ FindCmd.Position = UDim2.new(0.0714285746, 0, 0.0702347234, 0)
 FindCmd.Size = UDim2.new(0, 300, 0, 20)
 FindCmd.Font = Enum.Font.SourceSans
 FindCmd.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
-FindCmd.PlaceholderText = "Search For Command"
+FindCmd.PlaceholderText = "Search For A Good, or Shit, Command"
 FindCmd.Text = ""
 FindCmd.TextColor3 = Color3.fromRGB(255, 255, 255)
 FindCmd.TextSize = 14.000
@@ -340,7 +340,7 @@ local Versions = "1.0"
 local Cmd = {}
 
 Cmd[#Cmd + 1] = {Text = "versions "..Versions,Title = "Script versions"}
-Cmd[#Cmd + 1] = {Text = "modified by rareusername101lol",Title = "Script owner"}
+Cmd[#Cmd + 1] = {Text = "modified by Nathan_1617",Title = "Script owner LocalPlayer modified by Nathan1617"}
 Cmd[#Cmd + 1] =	{Text = "cmd / cmds",Title = "Show commands bar"}
 Cmd[#Cmd + 1] =	{Text = "rejoin / rj",Title = "Rejoin the game"}
 Cmd[#Cmd + 1] =	{Text = "leave / leaveserver / quit",Title = "Leave the server"}
@@ -1146,21 +1146,6 @@ function PlayerChatted(Message)
 			end
 		end)
 	end
-	if Command("reload") or Command("update") then
-		Notify("Updating versions...", Color3.fromRGB(0, 255, 255), "Updates")
-		pcall(function()
-			CmdGui:Destroy()
-			States = {}
-			LoopKill = {}
-			LoopTase = {}
-			Admin = {}
-			ScriptDisabled = true
-			for i,v in pairs(game.Lighting:GetChildren()) do
-				v.Parent = workspace
-			end
-		end)
-		Loadstring("https://pastebin.com/raw/9ab2s523")
-	end
 	if Command("beam") then
 		local Player = GetPlayer(Arg2)
 		if Player then
@@ -1463,7 +1448,7 @@ function PlayerChatted(Message)
 	end
 	if Command("taserbypass") or Command("lock") or Command("antitaser") then
 		States.TaserBypass = true
-		Notify("Turn taser bypass on", Color3.fromRGB(0, 255, 0), "Success")
+		Notify("Shit guards can't tase you.", Color3.fromRGB(0, 255, 0), "Success")
 		game.Players.LocalPlayer.CharacterAdded:Connect(function()
 			if States.TaserBypass then
 				wait(.2)
@@ -1475,7 +1460,7 @@ function PlayerChatted(Message)
 	end
 	if Command("notaserbypass") or Command("unlock") or Command("untaserbypass") then
 		States.TaserBypass = false
-		Notify("Turn taser bypass off", Color3.fromRGB(0, 255, 0), "Success")
+		Notify("Shit guards can tase you.", Color3.fromRGB(0, 255, 0), "Success")
 		game.Players.LocalPlayer.Character.ClientInputHandler.Disabled = false
 		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
 		game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
@@ -1531,7 +1516,7 @@ function PlayerChatted(Message)
 	end
 	if Command("noshield") or Command("antishield") then
 		States.Anti_Shield = true
-		Notify("Turn anti shield users on", Color3.fromRGB(0, 255, 0), "Success")
+		Notify("Shields can't block your gunshots", Color3.fromRGB(0, 255, 0), "Success")
 		while wait() do
 			for i,v in pairs(game.Players:GetPlayers()) do
 				pcall(function()
@@ -1561,7 +1546,7 @@ function PlayerChatted(Message)
 				Kill(v)
 			end
 		end
-		Notify("Killed all players", Color3.fromRGB(0, 255, 0), "Success")
+		Notify("Killed all of the players", Color3.fromRGB(255, 0, 0), "Idiot")
 	end
 	if Command("killinmate") or Command("killinmates") or Command("killsinmate") or Command("killsinmates") then
 		for i,v in pairs(game.Players:GetPlayers()) do
@@ -1571,7 +1556,7 @@ function PlayerChatted(Message)
 				end
 			end
 		end
-		Notify("Killed all inmates", Color3.fromRGB(0, 255, 0), "Success")
+		Notify("Killed all inmates...", Color3.fromRGB(0, 255, 0), "Success")
 	end
 	if Command("killguard") or Command("killsguard") or Command("killguards") or Command("killsguards") then
 		for i,v in pairs(game.Players:GetPlayers()) do
@@ -1613,7 +1598,7 @@ function PlayerChatted(Message)
 	end
 	if Command("loopkillguard") or Command("loopkillguards") or Command("loopkillsguard") or Command("loopkillsguards") or Command("loopkillcop") or Command("loopkillpolices") or Command("loopkillspolices") then
 		States.LoopKill_Guards = true
-		Notify("You fucking loopkilled them all", Color3.fromRGB(0, 255, 0), "Success")
+		Notify("You fucking loopkilled all guards", Color3.fromRGB(0, 255, 0), "Success :D")
 		while wait() do
 			if States.LoopKill_Guards then
 				for i,v in pairs(game.Teams.Guards:GetPlayers()) do
@@ -1630,7 +1615,7 @@ function PlayerChatted(Message)
 	end
 	if Command("unloopkillguard") or Command("unloopkillguards") or Command("unloopkillsguard") or Command("unloopkillsguards") or Command("unloopkillcop") or Command("unloopkillpolices") or Command("unloopkillspolices") then
 		States.LoopKill_Guards = false
-		Notify("Unloop kills all guards", Color3.fromRGB(0, 255, 0), "Success")
+		Notify("Guards live :/", Color3.fromRGB(0, 255, 0), "Success")
 	end
 	if Command("loopkillinmate") or Command("loopkillinmates") or Command("loopkillsinmate") or Command("loopkillsinmates") or Command("loopkillprisoner") or Command("loopkillprisoners") then
 		States.LoopKill_Inmates = true
@@ -1651,7 +1636,7 @@ function PlayerChatted(Message)
 	end
 	if Command("unloopkillinmate") or Command("unloopkillinmates") or Command("unloopkillsinmate") or Command("unloopkillsinmates") or Command("unloopkillprisoner") or Command("unloopkillprisoners") then
 		States.LoopKill_Inmates = false
-		Notify("Unloop kills all inmates", Color3.fromRGB(0, 255, 0), "Success")
+		Notify("You let the inmates live", Color3.fromRGB(0, 255, 0), "Success")
 	end
 	if Command("loopkillcriminal") or Command("loopkillcriminals") or Command("loopkillscriminal") or Command("loopkillscriminals") or Command("loopkillcrim") or Command("loopkillcrims") then
 		States.LoopKill_Criminals = true
@@ -1676,7 +1661,7 @@ function PlayerChatted(Message)
 	end
 	if Command("loopkillall") or Command("loopkillsall") then
 		States.LoopKill_Others = true
-		Notify("Looping kills all players", Color3.fromRGB(0, 255, 0), "Success")
+		Notify("You loopkilled all players, and now they hate you", Color3.fromRGB(0, 255, 0), "Arse/asshole")
 		while wait() do
 			if States.LoopKill_Others then
 				for i,v in pairs(game.Players:GetPlayers()) do
@@ -1696,15 +1681,15 @@ function PlayerChatted(Message)
 		States.LoopKill_Guards = false
 		States.LoopKill_Inmates = false
 		States.LoopKill_Others = false
-		Notify("Unlooping kills all players", Color3.fromRGB(0, 255, 0), "Success")
+		Notify("Finally nobody is dying", Color3.fromRGB(0, 255, 0), "Success")
 	end
 	if Command("goto") or Command("to") then
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil then
 			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace[Player.Name].HumanoidRootPart.CFrame
-			Notify("Go to "..Player.Name, Color3.fromRGB(0, 255, 0), "Success")
+			Notify("Gone to "..Player.Name, Color3.fromRGB(0, 255, 0), "Success")
 		else
-			Notify("No player found", Color3.fromRGB(255, 0, 0), "Error")
+			Notify("Player has left or doesn't exist", Color3.fromRGB(255, 0, 0), "Error")
 		end
 	end
 	if Command("re") or Command("refresh") then
@@ -2329,7 +2314,7 @@ function PlayerChatted(Message)
 					"I'm your dad",
 					"I'm your mom",
 					"I'm a god and I'm your dad",
-					"__________",
+					"Guards suck",
 					"OMG",
 					"OML",
 					"BEPP BOP BEEP BEEP BOP",
@@ -2532,7 +2517,7 @@ function PlayerChatted(Message)
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil and not Admin[Player.UserId] then
 			Admin[Player.UserId] = {Player = Player}
-			Chat("/w "..Player.Name.." You Have Been Ranked! Say "..Prefix.."cmds or "..Prefix.."cmd To View The Commands! Admin will be removed when I leave.")
+			Chat("/w "..Player.Name.." You Have Been Ranked! Say "..Prefix.."cmds or "..Prefix.."cmd To View The Commands! Admin will be removed when I leave or if I remove rank.")
 			Notify("Gave "..Player.Name.." admin commands", Color3.fromRGB(0, 255, 0), "Success")
 		else
 			Notify("No player found / already admin", Color3.fromRGB(255, 0, 0), "Error")
