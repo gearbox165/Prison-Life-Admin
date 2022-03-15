@@ -39,11 +39,11 @@ Background.Draggable = true
 
 CmdName.Name = "CmdName"
 CmdName.Parent = Background
-CmdName.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+CmdName.BackgroundColor3 = Color3.fromRGB(0,0,255)
 CmdName.BorderSizePixel = 0
 CmdName.Size = UDim2.new(0, 350, 0, 25)
 CmdName.Font = Enum.Font.GothamBlack
-CmdName.Text = "OP as fuck commands"
+CmdName.Text = "OP af commands"
 CmdName.TextColor3 = Color3.fromRGB(255, 255, 255)
 CmdName.TextScaled = true
 CmdName.TextSize = 14.000
@@ -58,7 +58,7 @@ FindCmd.Position = UDim2.new(0.0714285746, 0, 0.0702347234, 0)
 FindCmd.Size = UDim2.new(0, 300, 0, 20)
 FindCmd.Font = Enum.Font.SourceSans
 FindCmd.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
-FindCmd.PlaceholderText = "Search For A Good, or Shit, Command"
+FindCmd.PlaceholderText = "Search For A Good or Shit, Command"
 FindCmd.Text = ""
 FindCmd.TextColor3 = Color3.fromRGB(255, 255, 255)
 FindCmd.TextSize = 14.000
@@ -142,7 +142,7 @@ Background2.Draggable = true
 
 Label.Name = "Label"
 Label.Parent = Background2
-Label.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Label.BackgroundColor3 = Color3.fromRGB(0, 0, 255)
 Label.BorderSizePixel = 0
 Label.Position = UDim2.new(0, 0, 0, 0)
 Label.Size = UDim2.new(0, 250, 0, 25)
@@ -336,24 +336,25 @@ TransparencyBar.MouseButton1Click:Connect(function()
 	end
 end)
 
-local Versions = "1.0"
+local Versions = "1.1"
 local Cmd = {}
 
 Cmd[#Cmd + 1] = {Text = "versions "..Versions,Title = "Script versions"}
 Cmd[#Cmd + 1] = {Text = "modified by Nathan_1617",Title = "Script owner LocalPlayer modified by Nathan1617"}
+Cmd[#Cmd + 1] = {Text = "Edited colour scheme, cmds, removed cmd",Title = "Updates to the script"}
 Cmd[#Cmd + 1] =	{Text = "cmd / cmds",Title = "Show commands bar"}
 Cmd[#Cmd + 1] =	{Text = "rejoin / rj",Title = "Rejoin the game"}
 Cmd[#Cmd + 1] =	{Text = "leave / leaveserver / quit",Title = "Leave the server"}
-Cmd[#Cmd + 1] =	{Text = "admin / giveadmin [plr]",Title = "Give cmds to player"}
-Cmd[#Cmd + 1] =	{Text = "unadmin / removeadmin [plr]",Title = "Remove a commands from player"}
+Cmd[#Cmd + 1] =	{Text = "admin / giveadmin / rank [plr]",Title = "Give cmds to player"}
+Cmd[#Cmd + 1] =	{Text = "unadmin / removeadmin / unrank [plr]",Title = "Remove a commands from player"}
 Cmd[#Cmd + 1] =	{Text = "kill [plr]",Title = "Kill the player"}
 Cmd[#Cmd + 1] =	{Text = "killall",Title = "Kill all players"}
 Cmd[#Cmd + 1] =	{Text = "killguard / killsguard",Title = "Kill all guards"}
 Cmd[#Cmd + 1] =	{Text = "killinmate / killsinmate",Title = "Kill all inmates"}
 Cmd[#Cmd + 1] =	{Text = "killcriminal / killscriminal",Title = "Kill all criminals"}
 Cmd[#Cmd + 1] =	{Text = "tase [plr]",Title = "Tase the player"}
-Cmd[#Cmd + 1] =	{Text = "loopkill / loopkills [plr]",Title = "Loop kills player"}
-Cmd[#Cmd + 1] =	{Text = "unloopkill / unloopkills [plr]",Title = "Unloop kills player"}
+Cmd[#Cmd + 1] =	{Text = "loopkill / loopkills / lk [plr]",Title = "Loop kills player"}
+Cmd[#Cmd + 1] =	{Text = "unloopkill / unloopkills / unlk [plr]",Title = "Unloop kills player"}
 Cmd[#Cmd + 1] =	{Text = "loopkillall / loopkillsall",Title = "Loop kills all fucking players"}
 Cmd[#Cmd + 1] =	{Text = "loopkillguard / loopkillsguard",Title = "Loop kills all guards"}
 Cmd[#Cmd + 1] =	{Text = "loopkillinmate / loopkillinmates",Title = "Loop kills all inmates"}
@@ -372,9 +373,9 @@ Cmd[#Cmd + 1] =	{Text = "goto / to [plr]",Title = "Teleports to the player"}
 Cmd[#Cmd + 1] =	{Text = "bring [plr]",Title = "Teleports player to you"}
 Cmd[#Cmd + 1] =	{Text = "tp / teleport [plr] [plr2]",Title = "Teleports player to another player"}
 Cmd[#Cmd + 1] =	{Text = "arrest [plr] [time]",Title = "Arrest player that is a criminal"}
-Cmd[#Cmd + 1] =	{Text = "arrestall / arrestothers",Title = "Arrest all criminals"}
-Cmd[#Cmd + 1] =	{Text = "spamarrest / looparrest [plr]",Title = "Spam arrest player & lag player and server"}
-Cmd[#Cmd + 1] =	{Text = "unspamarrest / unlooparrest [plr]",Title = "Stop spam arrest player"}
+Cmd[#Cmd + 1] =	{Text = "arrestall / arrestothers / arrestcrims",Title = "Arrest all criminals"}
+Cmd[#Cmd + 1] =	{Text = "spamarrest / looparrest [plr]",Title = "Spam arrest player & lag player and server to oblivion"}
+Cmd[#Cmd + 1] =	{Text = "unspamarrest / unlooparrest [plr]",Title = "Stop spam arresting player"}
 Cmd[#Cmd + 1] =	{Text = "clearloopkill / clearloopkills",Title = "clear all loop kills table"}
 Cmd[#Cmd + 1] =	{Text = "auto / autore / autorefresh",Title = "Auto respawn on old position when died"}
 Cmd[#Cmd + 1] =	{Text = "unauto / unautore / unautorefresh",Title = "Stop auto respawn on old position when died"}
@@ -408,7 +409,6 @@ Cmd[#Cmd + 1] =	{Text = "green",Title = "Changes name tag color to green color"}
 Cmd[#Cmd + 1] =	{Text = "yellow",Title = "Changes name tag color to yellow color"}
 Cmd[#Cmd + 1] =	{Text = "getpos",Title = "Prints positions"}
 Cmd[#Cmd + 1] =	{Text = "unload / destroygui",Title = "Unload the scripts"}
-Cmd[#Cmd + 1] =	{Text = "reload / update",Title = "Reload the script to new version"}
 Cmd[#Cmd + 1] =	{Text = "How to open console?",Title = "To open console chat /console or press F9 or Fn + F9"}
 Cmd[#Cmd + 1] =	{Text = "lagserver / disconnect",Title = "Lag server and disconnect after 5 minutes of lagging"}
 Cmd[#Cmd + 1] =	{Text = "unlagserver / undisconnect",Title = "Stop lag server"}
@@ -1578,20 +1578,20 @@ function PlayerChatted(Message)
 		end
 		Notify("Killed all criminals", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	if Command("loopkill") or Command("loopkills") then
+	if Command("loopkill") or Command("loopkills") or Command("lk") then
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil and not LoopKill[Player.UserId] then
 			LoopKill[Player.UserId] = {Player = Player}
-			Notify("Looping kills "..Player.Name, Color3.fromRGB(0, 255, 0), "Success")
+			Notify("Loopkilling "..Player.Name, Color3.fromRGB(0, 255, 0), "Success")
 		else
-			Notify("No player found / already loop kills", Color3.fromRGB(255, 0, 0), "Error")
+			Notify("No player found / already loopkilled", Color3.fromRGB(255, 0, 0), "Error")
 		end
 	end
-	if Command("unloopkill") or Command("unloopkills") then
+	if Command("unloopkill") or Command("unloopkills") or Command("unlk") then
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil and LoopKill[Player.UserId] then
 			LoopKill[Player.UserId] = nil
-			Notify("Unloop kills "..Player.Name, Color3.fromRGB(0, 255, 0), "Success")
+			Notify("Unloopkilling "..Player.Name, Color3.fromRGB(0, 255, 0), "Success")
 		else
 			Notify("No player found / Player has no loop kills", Color3.fromRGB(255, 0, 0), "Error")
 		end
@@ -2271,7 +2271,7 @@ function PlayerChatted(Message)
 			Notify("No player found", Color3.fromRGB(255, 0, 0), "Error")
 		end
 	end
-	if Command("arrestall") or Command("arrestother") or Command("arrestothers") then
+	if Command("arrestall") or Command("arrestother") or Command("arrestothers") or Command("arrestcrims") then
 		for i,v in pairs(game.Players:GetPlayers()) do
 			if v ~= game.Players.LocalPlayer then
 				if v.TeamColor.Name == "Really red" then
@@ -2513,7 +2513,7 @@ function PlayerChatted(Message)
 		States.PlayerToLoopBring = nil
 		Notify("Unlooping bring", Color3.fromRGB(0, 255, 0), "Success")
 	end
-	if Command("admin") or Command("giveadmin") then
+	if Command("admin") or Command("giveadmin") or Command("rank") then
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil and not Admin[Player.UserId] then
 			Admin[Player.UserId] = {Player = Player}
@@ -2523,7 +2523,7 @@ function PlayerChatted(Message)
 			Notify("No player found / already admin", Color3.fromRGB(255, 0, 0), "Error")
 		end
 	end
-	if Command("unadmin") or Command("removeadmin") then
+	if Command("unadmin") or Command("removeadmin") or Command("unrank") then
 		local Player = GetPlayer(Arg2)
 		if Player ~= nil and Admin[Player.UserId] then
 			Admin[Player.UserId] = nil
